@@ -61,7 +61,7 @@ def s12_listen(ser):
                 output_ended = True 
                 s12_state = 1
             elif b"SLIX" in line:
-                slix_alarms.append(line[14:30])
+                slix_alarms.append(line[14:30].decode('ascii'))
     return (s12_state, slix_alarms)
 
 def s12_command(ser, command):
@@ -84,10 +84,11 @@ if __name__ == "__main__":
     # get alarm list
     ser.write('19.\r\n'.encode('ascii'))
     slix_alarms = s12_listen(ser)[1]
-    print('SLIX ALARMS:')
-    [print(alarm) for alarm in slix_alarms]
 
-    for alarm in slix_alarms:
-        while s12_listen(ser)[0] == 0:
+    with open('data/output/slix.log', 'a+') as out_f:
+        for alarm in slix_alarms:
             ser.write('MM\r\n'.encode('ascii'))
-        ser.write(('DELETE-ALARM:ALMTIME=' + re.sub('\D','&',alarm) + '.').encode('ascii'))
+            s12_listen(ser)
+            out_f.write('DELETE-ALARM:ALMTIME=' + re.sub('\D','&',alarm) + '.\n')
+            ser.write(('DELETE-ALARM:ALMTIME=' + re.sub('\D','&',alarm) + '.\r\n').encode('ascii'))
+            s12_listen(ser)
