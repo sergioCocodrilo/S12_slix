@@ -61,7 +61,7 @@ def s12_listen(ser):
                 output_ended = True 
                 s12_state = 1
             elif b"SLIX" in line:
-                slix_alarms.append(line[14:32])
+                slix_alarms.append(line[14:30])
     return (s12_state, slix_alarms)
 
 def s12_command(ser, command):
