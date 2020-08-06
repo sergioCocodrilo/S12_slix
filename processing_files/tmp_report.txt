@@ -1,0 +1,22 @@
+EXTERNAL SBL ALARMS                                                                         
+
+       CAT  I SOURCE+ALMTIME   DIRALM   NA    ALMNBR             ERRT  ALM-QUAL                    
+       NURG   0+06-24 21:59:35 SLIX     1202  5                  964                               
+       NURG   0+08-06 11:49:32 SLIX     862F  226                964                               
+       NURG   0+07-03 15:02:54 SLIX     0604  14                 964                               
+       NURG   0+04-28 23:35:42 SLIX     0630  24                 964                               
+       NURG   0+04-29 00:59:24 SLIX     0630  4                  964                                
+       NURG   0+04-29 01:51:36 SLIX     0630  16                 964                               
+       NURG   0+04-29 07:51:30 SLIX     0630  7                  964                               
+       NURG   0+04-29 11:27:36 SLIX     0630  15                 964                               
+       NURG   0+04-29 15:35:36 SLIX     0630  14                 964                               
+       NURG   0+04-27 21:35:37 SLIX     0633  67                 964                                
+       NURG   0+06-09 14:51:35 SLIX     1202  2                  964                               
+       NURG   0+05-23 14:55:47 SLIX     1202  18                 964                               
+                                                                                                    
+       SUMMARY OF AVALANCHE ALARM TYPES                                                            
+       CAT  I SOURCE+ALMTIME   DIRALM                     REPC                                      
+       URG    0+08-22 11:40:22 LIS                        4962                                     
+       URG    0+11-20 12:11:41 LFA                        4962                                     
+       URG    0+05-27 12:22:52 LMA                        4962                                     
+       NURG   0+11-12 11:26:34 RJA                        4962             
