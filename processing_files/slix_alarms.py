@@ -87,3 +87,7 @@ if __name__ == "__main__":
     print('SLIX ALARMS:')
     [print(alarm) for alarm in slix_alarms]
 
+    for alarm in slix_alarms:
+        while s12_listen(ser)[0] == 0:
+            ser.write('MM\r\n'.encode('ascii'))
+        ser.write(('DELETE-ALARM:ALMTIME=' + re.sub('\D','&',alarm) + '.').encode('ascii'))
